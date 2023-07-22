@@ -1,4 +1,4 @@
-### tdd - cdd  환경 구축 연습을 위한 pokemon 도감 프로젝트
+### tdd - cdd -ci/cd 환경 구축 연습을 위한 pokemon 도감 프로젝트
 
 ### 개발 규칙 
 
