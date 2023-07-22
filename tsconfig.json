@@ -16,8 +16,8 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": true, // 사용되지 않은 지역 변수가 있으면 알려줍니다
+    "noUnusedParameters": true, // 사용되지 않은 메서드 파라미터가 있으면 알려줍니다.
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
