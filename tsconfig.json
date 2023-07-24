@@ -18,8 +18,14 @@
     "strict": true,
     "noUnusedLocals": true, // 사용되지 않은 지역 변수가 있으면 알려줍니다
     "noUnusedParameters": true, // 사용되지 않은 메서드 파라미터가 있으면 알려줍니다.
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@home": ["src/pages/home/index"],
+      "@direction": ["src/pages/direction/index"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "src/main.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

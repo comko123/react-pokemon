@@ -1,20 +1,20 @@
-// import { within, userEvent } from '@storybook/testing-library';
-import type { Meta, StoryObj } from '@storybook/react';
-import { Solution } from '../App';
+// import { within, userEvent } from '@storybook/testing-library'
+import type { Meta, StoryObj } from "@storybook/react"
+import { Solution } from "../App"
 const meta = {
-  title: 'Example/Page',
-  component: Solution,
-} satisfies Meta<typeof Solution>;
+  title: "Example/Page",
+  component: Solution
+} satisfies Meta<typeof Solution>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const param: Story = {
-    args: {
-      text: "test",
-    },
-  };
+  args: {
+    text: "test"
+  }
+}
 
 // export const LoggedIn: Story = {
 //   play: async ({ canvasElement }) => {
@@ -24,4 +24,4 @@ export const param: Story = {
 //     });
 //     await userEvent.click(loginButton);
 //   },
-// };
+// }
