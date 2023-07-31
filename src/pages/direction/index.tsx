@@ -2,12 +2,27 @@ import React from "react"
 import useSWR from "swr"
 
 const Direction: React.FC = () => {
-  const { isLoading, data } = useSWR(
-    "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+  const { isLoading, data, error } = useSWR(
+    "https://jsonplaceholder.typicode.com/todos/1"
   )
-  console.log(isLoading, data)
-  //swr 동작 여부 확인 test
-  return <div>test</div>
+
+  if (error) {
+    return <div>Error while fetching data</div>
+  }
+
+  return (
+    <>
+      {isLoading ? (
+        <div>loading...</div>
+      ) : (
+        <ul>
+          <li>{data.id} / </li>
+          <li>{data.title} /</li>
+          <li>{data.userId} /</li>
+        </ul>
+      )}
+    </>
+  )
 }
 
 export default Direction
