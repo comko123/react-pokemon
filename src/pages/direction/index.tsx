@@ -2,9 +2,7 @@ import React from "react"
 import useSWR from "swr"
 
 const Direction: React.FC = () => {
-  const { isLoading, data, error } = useSWR(
-    "https://jsonplaceholder.typicode.com/todos/1"
-  )
+  const { isLoading, data, error } = useSWR("https://jsonplaceholder.typicode.com/todos")
 
   if (error) {
     return <div>Error while fetching data</div>
@@ -16,9 +14,9 @@ const Direction: React.FC = () => {
         <div>loading...</div>
       ) : (
         <ul>
-          <li>{data.id} / </li>
-          <li>{data.title} /</li>
-          <li>{data.userId} /</li>
+          {data.map((item: any) => (
+            <li key={item.title}>{item.title}</li>
+          ))}
         </ul>
       )}
     </>
