@@ -1,0 +1,40 @@
+@mixin displayX($content) {
+  display: flex;
+  justify-content: $content;
+}
+@mixin displayY($content) {
+  display: flex;
+  align-items: $content;
+}
+.header {
+  @include displayX(space-between);
+  width: 90%;
+  padding: 2% 5%;
+  background-color: orange;
+  font-weight: 800;
+  position: fixed;
+  z-index: 1;
+  .home-link {
+    @include displayY(center);
+  }
+  .search-box {
+    @include displayX(flex-end);
+
+    .search-icon {
+      width: 5%;
+      aspect-ratio: 1/1;
+    }
+
+    .search-input {
+      outline: none;
+      border-color: transparent;
+      border-radius: 20px;
+      padding: 5px;
+      font-weight: 700;
+    }
+  }
+}
+
+.layout-section {
+  padding: 8% 2%;
+}
