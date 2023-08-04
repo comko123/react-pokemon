@@ -1,10 +1,11 @@
 // import { within, userEvent } from '@storybook/testing-library'
+import HomePage from "@/pages/home"
 import type { Meta, StoryObj } from "@storybook/react"
-import { Solution } from "../App"
+
 const meta = {
   title: "Example/Page",
-  component: Solution
-} satisfies Meta<typeof Solution>
+  component: HomePage
+} satisfies Meta<typeof HomePage>
 
 export default meta
 

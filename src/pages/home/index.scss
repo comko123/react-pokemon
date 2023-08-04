@@ -1,0 +1,33 @@
+$flex: flex;
+
+@mixin position($a, $b, $c, $d) {
+  top: $a;
+  left: $b;
+  right: $c;
+  bottom: $d;
+}
+.ablity {
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  background-color: red;
+  height: 8%;
+  aspect-ratio: 1/1;
+  color: white;
+  border-radius: 15px;
+}
+.main-list {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  &::before {
+    content: "";
+    background-image: url("https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: fixed;
+    background-position: center;
+    @include position(0px, 0px, 0px, 0px);
+    opacity: 0.5;
+  }
+}
