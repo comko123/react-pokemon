@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import "./index.scss"
+import "./index.moudule.scss"
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>

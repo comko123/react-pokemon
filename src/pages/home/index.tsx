@@ -1,5 +1,5 @@
 import React from "react"
-import "./index.scss"
+import "./index.moudule.scss"
 import Layout from "@/components/layout"
 const HomePage: React.FC = () => {
   return (
