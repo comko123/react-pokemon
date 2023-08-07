@@ -1,26 +1,31 @@
-import React from "react"
+import { FC } from "react"
 import "./index.moudule.scss"
+import useSWR from "swr"
 import Layout from "@/components/layout"
-const HomePage: React.FC = () => {
+import Option from "@/components/home/option"
+const HomePage: FC = () => {
+  const { data } = useSWR<any>("https://pokeapi.co/api/v2/pokemon")
+  console.log(data.results)
   return (
     <Layout>
       <main className="main">
-        <article className="main-list">pokemon main</article>
-        <aside className="ablity">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1}
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
-            />
-          </svg>
+        <aside className="main-aside">
+          <Option />
         </aside>
+        <article className="main-list">
+          {data.results.map((item: any, index: number) => {
+            return (
+              <div key={item.name} className="pokemon-contanier">
+                <img
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                    index + 1
+                  }.png`}
+                />
+                <span>{item.name}</span>
+              </div>
+            )
+          })}
+        </article>
       </main>
     </Layout>
   )
