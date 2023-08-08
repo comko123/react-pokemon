@@ -12,6 +12,6 @@ describe("포켓몬 리스트및 버튼 통합 테스트", () => {
 
     const count_btn = await screen.findAllByRole("button")
 
-    expect(count_btn).toHaveLength(3)
+    expect(count_btn).toHaveLength(51)
   })
 })
