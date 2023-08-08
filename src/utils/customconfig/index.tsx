@@ -1,10 +1,11 @@
 import axios from "axios"
 import { ReactNode } from "react"
 import { SWRConfig } from "swr"
+import { BrowserRouter as Router } from "react-router-dom"
 const CustomConfig = ({ children }: { children: ReactNode }) => {
   return (
     <SWRConfig value={{ fetcher: async (url) => await (await axios(url)).data }}>
-      {children}
+      <Router>{children}</Router>
     </SWRConfig>
   )
 }
