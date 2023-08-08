@@ -1,0 +1,25 @@
+.pokemon-contanier {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-height: 13%;
+  align-items: center;
+  margin: 5px;
+  border-radius: 15px;
+  z-index: 1;
+  border: 3px solid rgb(243, 188, 243);
+}
+.pokemon-btn-list {
+  width: 100%;
+  padding: 5px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .pokemon-btn {
+    margin: 2px;
+    border-color: transparent;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+  }
+}

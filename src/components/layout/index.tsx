@@ -1,16 +1,21 @@
 import { ReactNode, useState } from "react"
 import { motion } from "framer-motion"
 import "./index.moudule.scss"
+import { useNavigate } from "react-router-dom"
 const Layout = ({ children }: { children: ReactNode }) => {
   const [state, setState] = useState(false)
+  const navigate = useNavigate()
   return (
     <>
       <header className="header">
-        <div className="home-link">home</div>
+        <div className="home-link" onClick={() => navigate("/")}>
+          home
+        </div>
         <div className="search-box">
           <motion.input
             className="search-input"
             placeholder="search for pokemon name"
+            initial={{ scaleX: 0 }}
             animate={{
               scaleX: state ? 1 : 0,
               transformOrigin: "right center"

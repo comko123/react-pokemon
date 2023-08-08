@@ -1,3 +1,4 @@
+@import "@/pages/home/index.moudule.scss";
 @mixin displayX($content) {
   display: flex;
   justify-content: $content;
@@ -6,6 +7,7 @@
   display: flex;
   align-items: $content;
 }
+
 .header {
   @include displayX(space-between);
   width: 90%;
@@ -13,9 +15,12 @@
   background-color: orange;
   font-weight: 800;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   .home-link {
     @include displayY(center);
+    &:hover {
+      color: white;
+    }
   }
   .search-box {
     @include displayX(flex-end);
@@ -41,4 +46,15 @@
 
 .layout-section {
   padding: 8% 2%;
+  &::before {
+    content: "";
+    background-image: url("https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: fixed;
+    background-position: center;
+    @include position(0px, 0px, 0px, 0px);
+    opacity: 0.3;
+    z-index: 1;
+  }
 }
